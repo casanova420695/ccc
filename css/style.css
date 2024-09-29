@@ -280,8 +280,8 @@ section {
 }
 
 .home .slide .content p {
-  font-size: 1.4rem;
-  color: var(--light-color);
+  font-size: 1.7rem;
+  color: #000000;
   line-height: 2;
   padding: 1rem 0;
 }
