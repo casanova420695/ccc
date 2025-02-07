@@ -2,6 +2,10 @@ let navbar = document.querySelector('.header .navbar');
 //let searchForm = document.querySelector('.header .search-form');
 //let loginForm = document.querySelector('.header .login-form');
 let contactInfo = document.querySelector('.contact-info');
+let currentIndex = 0;
+const images = document.querySelectorAll('.gallery-container img');
+const modal = document.getElementById('myModal');
+const modalImg = document.getElementById('modalImg');
 
 document.querySelector('#menu-btn').onclick = () =>{
    navbar.classList.toggle('active');
@@ -28,6 +32,18 @@ document.querySelector('#info-btn').onclick = () =>{
 document.querySelector('#close-contact-info').onclick = () =>{
    contactInfo.classList.remove('active');
 }
+document.querySelectorAll('.projects .box .image a').forEach(anchor => {
+  anchor.addEventListener('click', event => {
+      event.stopPropagation(); 
+  });
+});
+
+document.querySelectorAll('.projects .box .content').forEach(content => {
+  content.addEventListener('click', event => {
+      event.stopPropagation(); 
+  });
+});
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -39,6 +55,26 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 });
+
+function openModal(index) {
+  currentIndex = index;
+  modal.style.display = "block";
+  modalImg.src = images[currentIndex].src;
+}
+
+function closeModal() {
+  modal.style.display = "none";
+}
+
+function changeImage(n) {
+  currentIndex += n;
+  if (currentIndex >= images.length) {
+      currentIndex = 0;
+  } else if (currentIndex < 0) {
+      currentIndex = images.length - 1;
+  }
+  modalImg.src = images[currentIndex].src;
+}
 
 window.onscroll = () =>{
    navbar.classList.remove('active');

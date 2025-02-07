@@ -21,6 +21,7 @@
    <nav class="navbar">
       <a href="/index.html">home</a>
       <a href="/quote.html">quote</a>
+      <a href="#projects">projects</a>
 
    </nav>
    <div class="icons">
@@ -108,6 +109,61 @@
 </section>
 <!-- home section ends -->
 
+
+
+<!-- projects section starts  -->
+<section class="projects" id="projects">
+   <h1 class="heading"> Our work gallery </h1>
+   <div class="box-container">
+      <div class="box">
+         <div class="image">
+            <a href="projects/project1.html">
+               <img src="images/1.jpg" alt="Project 1">
+            </a>
+         </div>
+         <div class="content">
+            <div class="info">
+               <h3>Project 1</h3>
+               <p>Construction</p>
+            </div>
+            <i class="fas fa-plus"></i>
+         </div>
+      </div>
+      <div class="box">
+         <div class="image">
+            <a href="project2.html">
+               <img src="images/2.jpg" alt="Project 2">
+            </a>
+         </div>
+         <div class="content">
+            <div class="info">
+               <h3>Project 2</h3>
+               <p>Construction</p>
+            </div>
+            <i class="fas fa-plus"></i>
+         </div>
+      </div>
+      <div class="box">
+         <div class="image">
+            <a href="project3.html">
+               <img src="images/3.jpg" alt="Project 3">
+            </a>
+         </div>
+         <div class="content">
+            <div class="info">
+               <h3>Project 3</h3>
+               <p>Construction</p>
+            </div>
+            <i class="fas fa-plus"></i>
+         </div>
+
+         <!-- add 4,5,6 if required -->
+      </div>
+   </div>
+</section>
+
+<!-- projects section ends -->
+
 <!-- footer section starts  -->
 <section class="footer">
    <div class="credit"><span>Cassidy's Construction</span> | License #1052153 </div>
@@ -119,7 +175,9 @@
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
 <script>
-lightGallery(document.querySelector('.projects .box-container'));
+   document.addEventListener("DOMContentLoaded", function() {
+      lightGallery(document.querySelector('.projects .box-container'));
+   });
 </script>
 </body>
 </html>
