@@ -45,6 +45,43 @@ document.querySelectorAll('.projects .box .content').forEach(content => {
 });
 
 
+function openModal(index) {
+    const modal = document.getElementById("myModal");
+    const modalContent = document.getElementById("modalContent");
+    const galleryItems = document.querySelectorAll(".gallery-container img, .gallery-container video");
+    currentIndex = index;
+    showItem(galleryItems[currentIndex]);
+    modal.style.display = "flex"; 
+}
+
+function showItem(item) {
+    const modalContent = document.getElementById("modalContent");
+    if (item.tagName === "VIDEO") {
+        modalContent.innerHTML = `
+            <video controls autoplay muted class="modal-content">
+                <source src="${item.querySelector("source").src}" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>`;
+    } else {
+        modalContent.innerHTML = `<img src="${item.src}" alt="${item.alt}" class="modal-content">`;
+    }
+}
+
+function prevItem() {
+    const galleryItems = document.querySelectorAll(".gallery-container img, .gallery-container video");
+    currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+    showItem(galleryItems[currentIndex]);
+}
+function nextItem() {
+    const galleryItems = document.querySelectorAll(".gallery-container img, .gallery-container video");
+    currentIndex = (currentIndex + 1) % galleryItems.length;
+    showItem(galleryItems[currentIndex]);
+}
+
+function closeModal() {
+    const modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
 
 document.addEventListener('DOMContentLoaded', function() {
   var redirectIcons = document.querySelectorAll('.redirect');
@@ -56,24 +93,25 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-function openModal(index) {
-  currentIndex = index;
-  modal.style.display = "block";
-  modalImg.src = images[currentIndex].src;
-}
 
-function closeModal() {
-  modal.style.display = "none";
-}
+//https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
 
-function changeImage(n) {
-  currentIndex += n;
-  if (currentIndex >= images.length) {
-      currentIndex = 0;
-  } else if (currentIndex < 0) {
-      currentIndex = images.length - 1;
-  }
-  modalImg.src = images[currentIndex].src;
+function copyText() {
+  var text = document.getElementById("text-to-copy").innerText;
+
+
+  var tempElement = document.createElement("textarea");
+  tempElement.value = text;
+  document.body.appendChild(tempElement);
+
+
+  tempElement.select();
+  tempElement.setSelectionRange(0, 99999); // For mobile devices
+
+  document.execCommand("copy");
+  document.body.removeChild(tempElement);
+
+  alert("done: " + text);
 }
 
 window.onscroll = () =>{

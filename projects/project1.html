@@ -25,7 +25,7 @@
         <nav class="navbar">
             <a href="/index.html">home</a>
             <a href="/quote.html">quote</a>
-            <a href="#projects">projects</a>
+            <a href="/index.html#projects">Projects</a>
         </nav>
         <div class="icons">
             <div id="menu-btn" class="fas fa-bars"></div>
@@ -66,25 +66,31 @@
     <!-- header section ends -->
 
     <section class="project-detail">
-        <h1 class="heading" style="font-size: 36px;"> A Complete Renovation Project</h1>
+        <h1 class="heading" style="font-size: 36px;"> wait for title</h1>
         <p style="font-size: 18px;">
-            This oceanfront home underwent a full renovation, featuring new Hardie Plank siding, Milgard windows, and a waterproofed deck. Inside, spaces were reconfigured for functionality, with modern fixtures, a luxurious bathroom, and upgraded systems like a tankless water heater. Premium materials and finishes transformed it into a modern, efficient, and valuable coastal living space. </p>
+            wait for text </p>
         </p>
         <div class="gallery-container">
            
-            <img src="/images/deck/0.jpeg" alt="Project 1 Image 1" onclick="openModal(0)">
-            <img src="/images/deck/1.jpeg" alt="Project 1 Image 2" onclick="openModal(1)">
-            <img src="/images/deck/2.jpeg" alt="Project 1 Image 3" onclick="openModal(2)">
-            <img src="/images/deck/3.jpeg" alt="Project 1 Image 4" onclick="openModal(3)">
-            <img src="/images/deck/4.jpeg" alt="Project 1 Image 5" onclick="openModal(4)">
-            <img src="/images/deck/5.jpeg" alt="Project 1 Image 6" onclick="openModal(5)">
-            <img src="/images/deck/6.jpeg" alt="Project 1 Image 7" onclick="openModal(6)">
-            <img src="/images/deck/7.jpeg" alt="Project 1 Image 8" onclick="openModal(7)">
-            <img src="/images/deck/8.jpeg" alt="Project 1 Image 9" onclick="openModal(8)">
-            <img src="/images/deck/9.jpeg" alt="Project 1 Image 10" onclick="openModal(9)">
-            <img src="/images/deck/10.jpeg" alt="Project 1 Image 11" onclick="openModal(10)">
+            <img src="/images/n/n2.png" alt="Project 1 Image 1" onclick="openModal(0)">
+            <img src="/images/n/n3.png" alt="Project 1 Image 2" onclick="openModal(1)">
+            <img src="/images/n/n4.png" alt="Project 1 Image 3" onclick="openModal(2)">
+            <img src="/images/n/n5.png" alt="Project 1 Image 4" onclick="openModal(3)">
+            <img src="/images/n/n6.png" alt="Project 1 Image 5" onclick="openModal(4)">
+            <img src="/images/n/n7.png" alt="Project 1 Image 6" onclick="openModal(5)">
+            <img src="/images/n/n8.png" alt="Project 1 Image 7" onclick="openModal(6)">
+            <video controls muted onclick="openModal(8)">
+                <source src="/images/n/Final-video.mp4" type="video/mp4">
+                Your browser does not support this video.
+            </video>
         </div>
     </section>
+
+    <div class="arrow-container">
+        <button class="arrow-button" onclick="window.location.href='/index.html'">
+            <i class="fas fa-arrow-left"></i> 
+        </button>
+
 
 <!-- footer section starts  -->
 <section class="footer">
@@ -93,13 +99,16 @@
  <!-- footer section ends -->
 
 
-   <!-- Gallery Modal -->
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImg">
-        <a class="prev" onclick="changeImage(-1)">&#10094;</a>
-        <a class="next" onclick="changeImage(1)">&#10095;</a>
-    </div>
+     <!-- Gallery Modal -->
+  <!-- Modal -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div id="modalContent" class="modal-content"></div>
+    <!-- Botones de navegación -->
+    <a class="prev" onclick="prevItem()">&#10094;</a>
+    <a class="next" onclick="nextItem()">&#10095;</a>
+</div>
+
 
     <script src="/js/script.js"></script>
 </body>

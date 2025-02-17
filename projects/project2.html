@@ -25,7 +25,7 @@
         <nav class="navbar">
             <a href="/index.html">home</a>
             <a href="/quote.html">quote</a>
-            <a href="#projects">projects</a>
+            <a href="/index.html#projects">Projects</a>
         </nav>
         <div class="icons">
             <div id="menu-btn" class="fas fa-bars"></div>
@@ -66,25 +66,29 @@
     <!-- header section ends -->
 
     <section class="project-detail">
-        <h1 class="heading" style="font-size: 36px;"> waiting</h1>
+        <h1 class="heading" style="font-size: 36px;"> waiting 401</h1>
         <p style="font-size: 18px;">
             wait </p>
         </p>
         <div class="gallery-container">
            
-            <img src="/images/deck/" alt="Project 1 Image 1" onclick="openModal(0)">
-            <img src="/images/deck/" alt="Project 1 Image 2" onclick="openModal(1)">
-            <img src="/images/deck/" alt="Project 1 Image 3" onclick="openModal(2)">
-            <img src="/images/deck/" alt="Project 1 Image 4" onclick="openModal(3)">
-            <img src="/images/deck/" alt="Project 1 Image 5" onclick="openModal(4)">
-            <img src="/images/deck/" alt="Project 1 Image 6" onclick="openModal(5)">
-            <img src="/images/deck/" alt="Project 1 Image 7" onclick="openModal(6)">
-            <img src="/images/deck/" alt="Project 1 Image 8" onclick="openModal(7)">
-            <img src="/images/deck/" alt="Project 1 Image 9" onclick="openModal(8)">
-            <img src="/images/deck/" alt="Project 1 Image 10" onclick="openModal(9)">
-            <img src="/images/deck/" alt="Project 1 Image 11" onclick="openModal(10)">
+            <img src="/images/401/401-1.png" alt="Project 1 Image 1" onclick="openModal(0)">
+            <img src="/images/401/401-2.png" alt="Project 1 Image 2" onclick="openModal(1)">
+            <img src="/images/401/401-3.png" alt="Project 1 Image 3" onclick="openModal(2)">
+            <img src="/images/401/401-4.png" alt="Project 1 Image 4" onclick="openModal(3)">
+            <img src="/images/401/401-5.png" alt="Project 1 Image 5" onclick="openModal(4)">
+            <img src="/images/401/401-6.png" alt="Project 1 Image 6" onclick="openModal(5)">
+            <img src="/images/401/401-7.png" alt="Project 1 Image 6" onclick="openModal(6)">
+            <img src="/images/401/401-8.png" alt="Project 1 Image 6" onclick="openModal(7)">
+          
+         
         </div>
     </section>
+
+    <div class="arrow-container">
+        <button class="arrow-button" onclick="window.location.href='/index.html'">
+            <i class="fas fa-arrow-left"></i> 
+        </button>
 
 <!-- footer section starts  -->
 <section class="footer">
@@ -93,13 +97,15 @@
  <!-- footer section ends -->
 
 
-   <!-- Gallery Modal -->
-    <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImg">
-        <a class="prev" onclick="changeImage(-1)">&#10094;</a>
-        <a class="next" onclick="changeImage(1)">&#10095;</a>
-    </div>
+    <!-- Gallery Modal -->
+  <!-- Modal -->
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <div id="modalContent" class="modal-content"></div>
+    <!-- Botones de navegación -->
+    <a class="prev" onclick="prevItem()">&#10094;</a>
+    <a class="next" onclick="nextItem()">&#10095;</a>
+</div>
 
     <script src="/js/script.js"></script>
 </body>
